@@ -47,7 +47,7 @@
         cvrt = function (e, f) {
             e.length < 3 && (e += "00");
             e = parseInt(e, 10);
-            (e < 700 || (f && e === 700)) && (e += 1200);
+            (e < 2300 || (f && e === 2300)); // formerly 700 and "&& (e += 1200)"
             e += "";
             return ((parseInt(e.substring(0, e.length - 2), 10) - 7) * 4) + (parseInt(e.substring(e.length - 2), 10) / 15);
         },
@@ -247,16 +247,16 @@
         }
 
         canvas.width === 300 && (canvas.width = 811);
-        canvas.height === 150 && (canvas.height = 391);
+        canvas.height === 150 && (canvas.height = 500); //formerly 391
         c = canvas.getContext("2d");
-        h = canvas.height / 13;
+        h = canvas.height / 17; // formerly 13
         w = (canvas.width - conf.timeColumnWidth) / 6;
         config && scheda.setConfig(config);
         canvas_id = id;
 
         // draw canvas background
         c.fillStyle = conf.bgColor;
-        c.fillRect(0, 0, canvas.width, h * 13);
+        c.fillRect(0, 0, canvas.width, h * 17); //formerly 13
 
         // draw table header bg
         c.fillStyle = conf.headerBgColor;
@@ -265,7 +265,7 @@
         // draw mini grid
         c.beginPath();
         c.strokeStyle = conf.miniGridColor;
-        for (i = 0, j = (h / 4) + h; i < 48; i += 1, j += (h / 4)) {
+        for (i = 0, j = (h / 4) + h; i < 64; i += 1, j += (h / 4)) { //formerly 48
             c.moveTo(0, j);
             c.lineTo(canvas.width, j);
         }
@@ -278,7 +278,7 @@
         // draw horizontal main grid
         c.beginPath();
         c.strokeStyle = conf.hMainGridColor;
-        for (i = 0, j = h; i < 13; i += 1, j += h) {
+        for (i = 0, j = h; i < 17; i += 1, j += h) { //formerly 13
             c.moveTo(0, j);
             c.lineTo(canvas.width, j);
         }
@@ -299,7 +299,7 @@
         c.beginPath();
         c.fillStyle = conf.time.color;
         c.font = conf.time.style + " " + conf.time.size + "px " + conf.time.font;
-        for (i = 7; i < 19; i += 1) {
+        for (i = 7; i < 23; i += 1) { //formerly 19
             if (i === 12) {
                 j = i + "-1";
             } else if (i > 12) {
