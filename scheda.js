@@ -307,7 +307,7 @@
             } else {
                 j = i + "-" + (i + 1);
             }
-            c.fillText(j, tC(conf.timeColumnWidth, c, j), ((h / 2) + (conf.time.size / 2)) + ((i - 7) * h) + h);
+            c.fillText(j, tC(conf.timeColumnWidth, c, j), ((h / 2) + (conf.time.size / 2)) + ((i - 6) * h) + h);
         }
 
         // draw day labels
