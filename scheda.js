@@ -49,7 +49,7 @@
             e = parseInt(e, 10);
             (e < 2200 || (f && e === 2200)); // formerly 700 and "&& (e += 1200)"
             e += "";
-            return ((parseInt(e.substring(0, e.length - 2), 10) - 7) * 4) + (parseInt(e.substring(e.length - 2), 10) / 15);
+            return ((parseInt(e.substring(0, e.length - 2), 10) - 6) * 4) + (parseInt(e.substring(e.length - 2), 10) / 15);
         },
 
         tC = function (w, c, t) {
