@@ -299,7 +299,7 @@
         c.beginPath();
         c.fillStyle = conf.time.color;
         c.font = conf.time.style + " " + conf.time.size + "px " + conf.time.font;
-        for (i = 7; i < 23; i += 1) { //formerly 19
+        for (i = 6; i < 22; i += 1) { //formerly 19
             if (i === 12) {
                 j = i + "-1";
             } else if (i > 12) {
